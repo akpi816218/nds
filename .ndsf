@@ -1,7 +1,10 @@
 {
 	"data": {
 		"key": "asdf",
-		"1": "jkl",
-		"2": ";"
+		"values": [
+			"asdf",
+			"jkl",
+			";"
+		]
 	}
 }
