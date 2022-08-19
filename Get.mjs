@@ -1,10 +1,9 @@
 import { readFileSync } from 'fs';
-import { Data } from './Data';
+import { Data } from './Data.mjs';
 
 const Get = (key) => {
-	let json = JSON.parse(readFileSync('.ndsf', { encoding: "utf-8" }));
-	let data = new Data(json);
-	return;
+	// return JSON.parse(readFileSync(".ndsf", { encoding: "utf-8" }));
+	return new Data(JSON.parse(readFileSync(".ndsf", { encoding: "utf-8" })));
 }
 
 export { Get };
