@@ -1,5 +1,5 @@
-{
-	"akpi": {
+[
+	{
 		"key": "akpi",
 		"values": [
 			"Akhil",
@@ -7,7 +7,39 @@
 			"Pillai"
 		]
 	},
-	"viwo": {
+	{
+		"key": "arli",
+		"values": [
+			"Arthur",
+			"L.",
+			"Li"
+		]
+	},
+	{
+		"key": "jama",
+		"values": [
+			"Jacob",
+			"",
+			"Mauger"
+		]
+	},
+	{
+		"key": "jodo",
+		"values": [
+			"John",
+			"",
+			"Doe"
+		]
+	},
+	{
+		"key": "judu",
+		"values": [
+			"Justin",
+			"",
+			"Dubbs"
+		]
+	},
+	{
 		"key": "viwo",
 		"values": [
 			"Vincent",
@@ -15,12 +47,12 @@
 			"Wong"
 		]
 	},
-	"arli": {
-		"key": "arli",
+	{
+		"key": "asjk",
 		"values": [
-			"Arthur",
-			"L.",
-			"Li"
+			"asdf",
+			";",
+			"jkl"
 		]
 	}
-}
+]

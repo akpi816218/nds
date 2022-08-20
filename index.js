@@ -1,4 +1,7 @@
 import { Get } from './Get.mjs';
-// import { Set } from "./Set.mjs";
+import { NDSData } from './NDSData.mjs';
+import { Set } from './Set.mjs';
 
-console.log(Get(/(arli|viwo)/i));
+Get(/.*/, true).then((value) => {
+	console.log(value);
+});

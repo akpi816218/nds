@@ -1,24 +1,28 @@
 {
-  "name": "nds",
-  "version": "1.0.0",
-  "description": "nds (Node Data Storage)",
-  "main": "index.js",
+	"name": "nds",
+	"version": "1.0.0",
+	"description": "nds (Node Data Storage)",
+	"main": "index.js",
 	"type": "module",
-  "scripts": {
+	"scripts": {
+		"format": "npx prettier --write .",
 		"start": "node .",
-    "test": "echo No test && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akpi816218/nds.git"
-  },
-  "keywords": [
-    "database"
-  ],
-  "author": "Akhil Pillai",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/akpi816218/nds/issues"
-  },
-  "homepage": "https://github.com/akpi816218/nds#readme"
+		"test": "echo No test && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/akpi816218/nds.git"
+	},
+	"keywords": [
+		"database"
+	],
+	"author": "Akhil Pillai",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/akpi816218/nds/issues"
+	},
+	"homepage": "https://github.com/akpi816218/nds#readme",
+	"dependencies": {
+		"prettier": "^2.7.1"
+	}
 }
