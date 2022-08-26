@@ -19,12 +19,12 @@ class NDSData {
 	}
 }
 
-const Get = async (regexp = /.*/, file = '.ndsf') => {
+const Get = async (regexp = /[\s\S]*/, file = '.ndsf') => {
 	return new Promise((res, rej) => {
-		if (!regexp instanceof RegExp)
+		if (!(regexp instanceof RegExp))
 			rej(new NDSError(`Invalid RegExp: ${regexp}`));
 		if (!existsSync(file) || !file.match(/\.ndsf$/))
-			rej(new NDSError(`Invalid file: '${file}' does not exist`));
+			rej(new NDSError(`Invalid file: '${file}'`));
 		let allJson = [],
 			allData = [],
 			allHits = [],
@@ -55,11 +55,11 @@ const Get = async (regexp = /.*/, file = '.ndsf') => {
 	});
 };
 
-const GetSync = (regexp = /.*/, file = '.ndsf') => {
-	if (!regexp instanceof RegExp)
+const GetSync = (regexp = /[\s\S]*/, file = '.ndsf') => {
+	if (!(regexp instanceof RegExp))
 		throw new NDSError(`Invalid RegExp: ${regexp}`);
 	if (!existsSync(file) || !file.match(/\.ndsf$/))
-		throw new NDSError(`Invalid file: '${file}' does not exist`);
+		throw new NDSError(`Invalid file: '${file}'`);
 	let allJson = [],
 		allData = [],
 		allHits = [],
@@ -88,10 +88,10 @@ const GetSync = (regexp = /.*/, file = '.ndsf') => {
 
 const Set = async (data = new NDSData(), file = '.ndsf') => {
 	return new Promise((res, rej) => {
-		if (!data instanceof NDSData || !data.key || !data.values)
+		if (!(data instanceof NDSData) || !data.key || !data.values)
 			rej(new NDSError(`Invalid data: ${data}`));
 		if (!existsSync(file) || !file.match(/\.ndsf$/))
-			rej(new NDSError(`Invalid file: '${file}' does not exist`));
+			rej(new NDSError(`Invalid file: '${file}'`));
 		let allJson = [],
 			allData = GetSync(/.*/i);
 		allData.push(data);
@@ -111,15 +111,15 @@ const Set = async (data = new NDSData(), file = '.ndsf') => {
 			}),
 			{ encoding: 'utf-8' }
 		);
-		res(true);
+		res(GetSync(/[\s\S]*/, file));
 	});
 };
 
 const SetSync = (data = new NDSData(), file = '.ndsf') => {
-	if (!data instanceof NDSData || !data.key || !data.values)
+	if (!(data instanceof NDSData) || !data.key || !data.values)
 		throw new NDSError(`Invalid data: ${data}`);
 	if (!existsSync(file) || !file.match(/\.ndsf$/))
-		throw new NDSError(`Invalid file: '${file}' does not exist`);
+		throw new NDSError(`Invalid file: '${file}'`);
 	let allJson = [],
 		allData = GetSync(/.*/i);
 	allData.push(data);
@@ -139,6 +139,7 @@ const SetSync = (data = new NDSData(), file = '.ndsf') => {
 		}),
 		{ encoding: 'utf-8' }
 	);
+	return GetSync(/[\s\S]*/, file);
 };
 
 export { NDSData, Get, GetSync, Set, SetSync };
