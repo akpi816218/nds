@@ -93,7 +93,7 @@ const Set = async (data = new NDSData(), file = '.ndsf') => {
 		if (!existsSync(file) || !file.match(/\.ndsf$/))
 			rej(new NDSError(`Invalid file: '${file}'`));
 		let allJson = [],
-			allData = GetSync(/.*/i);
+			allData = GetSync(/.*/i, file);
 		allData.push(data);
 		allData.forEach((value) => {
 			allJson.push(
@@ -121,7 +121,7 @@ const SetSync = (data = new NDSData(), file = '.ndsf') => {
 	if (!existsSync(file) || !file.match(/\.ndsf$/))
 		throw new NDSError(`Invalid file: '${file}'`);
 	let allJson = [],
-		allData = GetSync(/.*/i);
+		allData = GetSync(/.*/i, file);
 	allData.push(data);
 	allData.forEach((value) => {
 		allJson.push(
