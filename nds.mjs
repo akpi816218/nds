@@ -1,7 +1,16 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { format } from 'prettier';
 
-class NDSError extends Error {}
+class NDSError extends Error {
+	constructor(message) {
+		super(message);
+		this.name = "NDSError";
+	}
+	setCode (code) {
+		this.code = code;
+		return this;
+	}
+}
 
 class NDSData {
 	constructor(json) {
