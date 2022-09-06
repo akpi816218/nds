@@ -35,8 +35,8 @@ const Get = async (regexp = /[\s\S]*/, file = '.ndsf') => {
 		}
 
 		allJson.sort((a, b) => {
-			a = a.key.toLowerCase();
-			b = b.key.toLowerCase();
+			a = a.key.toString().toLowerCase();
+			b = b.key.toString().toLowerCase();
 			return a < b ? -1 : a > b ? 1 : 0;
 		});
 
@@ -70,8 +70,8 @@ const GetSync = (regexp = /[\s\S]*/, file = '.ndsf') => {
 	}
 
 	allJson.sort((a, b) => {
-		a = a.key.toLowerCase();
-		b = b.key.toLowerCase();
+		a = a.key.toString().toLowerCase();
+		b = b.key.toString().toLowerCase();
 		return a < b ? -1 : a > b ? 1 : 0;
 	});
 
@@ -142,4 +142,4 @@ const SetSync = (data = new NDSData(), file = '.ndsf') => {
 	return GetSync(/[\s\S]*/, file);
 };
 
-export { NDSData, Get, GetSync, Set, SetSync };
+export { Get, GetSync, NDSData, Set, SetSync };
