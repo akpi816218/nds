@@ -71,3 +71,20 @@ Parameters:
 | file | String | false | .ndsf |
 
 Returns: An array of `NDSData` objects that represents the final contents of the written file.
+
+---
+---
+
+## `NDSError` codes
+
+Error codes that start with...
+ - `1` indicate invalid arguments,
+ - `2` indicate an invalid file or file content,
+ - `3` indicate
+
+| code | description |
+| :--: | :---------: |
+| 101 | Invalid RegExp to `Get()` or `GetSync()` |
+| 102 | Invalid data to `Set()` or `SetSync()` |
+| 201 | Invalid file |
+| 202 | Content of file is invalid JSON |
